@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import ProductList from './Components/Products/ProductList';
 
 function App() {
+  const [products, setProducts] = useState(SAMPLE_PRODUCTS)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ProductList products={products} />
   );
 }
 
 export default App;
+
+
+const SAMPLE_PRODUCTS = [
+  {
+    id: 1,
+    title: "Product 1",
+    price: "$250",
+    description: "Lorem ipsum dolor sit amet"
+  },
+  {
+    id: 2,
+    title: "Product 2",
+    price: "$250",
+    description: "Lorem ipsum dolor sit amet"
+  },
+  {
+    id: 3,
+    title: "Product 3",
+    price: "$250",
+    description: "Lorem ipsum dolor sit amet"
+  }
+]
